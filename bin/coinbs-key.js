@@ -1,18 +1,19 @@
 const {program} = require('commander');
 const key = require('../commands/key');
 
+
 program
-  .command('set')
+  .command('set-key')
   .description('Set API Key -- Get at https://nomics.com')
   .action(key.set);
 
 program
-  .command('show')
+  .command('show-key')
   .description('Show API Key')
   .action(key.show);
 
 program
-  .command('remove')
+  .command('remove-key')
   .description('Remove API Key')
   .action(key.remove);
 

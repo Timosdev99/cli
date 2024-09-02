@@ -4,10 +4,12 @@ const key = {
     },
 
     show() {
-        console.log('set working')
+        console.log('show working')
     },
 
     remove() {
-        console.log('set working')
+        console.log('remove working')
     }
 }
+
+module.exports = key;
