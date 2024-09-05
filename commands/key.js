@@ -1,32 +1,30 @@
-const inquirer = require('inquirer');
-const color = require('colors');
-const keymanager = require('../lib/keymanager.js');
+import inquirer from 'inquirer';
+import colors from 'colors';
+import KeyManager from '../lib/keymanager.js';
 
-const key = {
-  async set() {
-    const key_manager = new keymanager();
+const isRequired = input => input === '' ? 'This value is required' : true;
 
-    const input = await inquirer.prompt([{
-      type: 'input',
-      name: 'key',
-      message: 'Enter API Key '.green + 'https://nomics.com',
-      validate: isRequired
-    }]);
+export const set = async () => {
+  const keyManager = new KeyManager();
 
-    const key = key_manager.setKey(input.key);
+  const input = await inquirer.prompt([{
+    type: 'input',
+    name: 'key',
+    message: 'Enter API Key '.green + 'https://nomics.com',
+    validate: isRequired
+  }]);
 
-    if (key) {
-      console.log('API key set'.blue);
-    }
-  },
+  const key = keyManager.setKey(input.key);
 
-  show() {
-    console.log('show working');
-  },
-
-  remove() {
-    console.log('remove working');
+  if (key) {
+    console.log('API key set'.blue);
   }
 };
 
-module.exports = key;
+export const show = () => {
+  console.log('show working');
+};
+
+export const remove = () => {
+  console.log('remove working');
+};

@@ -1,6 +1,7 @@
-const {program} = require('commander');
-const key = require('../commands/key');
+import { Command } from 'commander';
+import * as key from '../commands/key.js';
 
+const program = new Command();
 
 program
   .command('set-key')
