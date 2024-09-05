@@ -1,10 +1,10 @@
 const inquirer = require('inquirer');
 const color = require('colors');
-const KeyManager = require('../lib/keymanager.js');
+const keymanager = require('../lib/keymanager.js');
 
 const key = {
   async set() {
-    const key_manager = new KeyManager();
+    const key_manager = new keymanager();
 
     const input = await inquirer.prompt([{
       type: 'input',
