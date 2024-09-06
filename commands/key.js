@@ -30,7 +30,16 @@ export const set = async () => {
 };
 
 export const show = () => {
-  console.log('show working');
+  try {
+    const keyManager = new KeyManager();
+    const key = keyManager.getKey();
+
+    console.log('Current API Key: ', key.yellow);
+
+    return key;
+  } catch (err) {
+    console.error(err.message.red);
+  }
 };
 
 export const remove = () => {
