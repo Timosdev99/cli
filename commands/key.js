@@ -13,7 +13,7 @@ export const set = async () => {
     message: 'Enter API Key '.green + 'https://nomics.com',
     validate: isRequired
   }]);
-
+    
   const key = keyManager.setKey(input.key);
 
   if (key) {
