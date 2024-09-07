@@ -42,6 +42,22 @@ export const show = () => {
   }
 };
 
-export const remove = () => {
+export const remove = () => { try {
+  const keyManager = new KeyManager();
+  const key = keyManager.getKey();
+  const deleted = keyManager.deleteKey
+
+   if(deleted){
+    const key = keyManager.setKey();
+    return console.log('key deleted'.blue)
+   }
+
+
+ ;
+
+  return key;
+} catch (err) {
+  console.error(err.message.red);
+}
   console.log('remove working');
 };
