@@ -8,7 +8,7 @@ program
 .description('check price of coin')
 .option(
     '--coin <type>',
-    'Add specific coin types in CSV format',
+    'Add specific coin types in CSV format',   
     'BTC,ETH,XRP'
   )
   .option('--cur <currency>', 'Change the currency', 'USD')
