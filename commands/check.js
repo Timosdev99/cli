@@ -1,6 +1,6 @@
  const check = {
     price(cmd)  {
-        console.log(cmd.coin, cmd.cur)
+        console.log(cmd.coin , cmd.cur)
     }
 }
 
